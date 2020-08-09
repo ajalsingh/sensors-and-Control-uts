@@ -2,11 +2,11 @@ clc;
 clear;
 
 %Get the following parameters from your calibration
-px=285.68687;%Principal point X
-py=244.43693; %Principal point Y
+px=285.67966;%Principal point X
+py=244.73945; %Principal point Y
 
-fx=693.14908; %Focal length
-fy=690.66062; 
+fx=693.14679; %Focal length
+fy=690.65880; 
 
 
 %Homogenous transformation matrix

@@ -1,7 +1,7 @@
 I=imread('Sydney_Harbour_Bridge_from_Circular_Quay.jpg'); %Read image
 
 %Convert to gray scale
-%GSI=rgb2gray(I); 
+GSI=rgb2gray(I); 
 
 %Define kernal
 kern=[0 -1 0;-1 5 -1; 0 -1 0];
