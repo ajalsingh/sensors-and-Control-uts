@@ -9,7 +9,7 @@ firstlaserscan = readMessages(laserscans, 1);
 
 cart=firstlaserscan{1}.readCartesian;
 
-plot(cart(:,1),cart(:,2))
+scatter(cart(:,1),cart(:,2))
 
 %% QUESTION 2
 
@@ -24,11 +24,12 @@ Yvals=ranges.*sin(deg2rad(angles));
 
 scatter(Xvals,Yvals)
 
-%% Question 3
-
+%% Question 4
+%4.1
 clear all
 close all
 
+addpath('dataset_intel/');
 scan=load('intel_LASER_.txt');
 
 angles= linspace(-90,90,180);
@@ -36,12 +37,14 @@ angles= linspace(-90,90,180);
 scan1=scan(1,:);
 scan32=scan(32,:);
 
+% Use polcart to get x and y coordinates of scan
 [scan1x, scan1y] = pol2cart(angles,scan1);
 [scan32x, scan32y] = pol2cart(angles,scan32);
 
 scan1_cart=[scan1x',scan1y', zeros(180,1)];
 scan32_cart=[scan32x', scan32y', zeros(180,1)];
 
+%4.2 Create point cloud
 scan1_ptcloud=pointCloud(scan1_cart,'Color',[ones(180,1),zeros(180,1),zeros(180,1)]);
 scan32_ptcloud=pointCloud(scan32_cart,'Color',[zeros(180,1),ones(180,1),zeros(180,1)]);
 
@@ -50,4 +53,5 @@ hold on
 pcshow(scan1_ptcloud)
 pcshow(scan32_ptcloud)
 
+%4.3
 tform = pcregistericp(scan1_ptcloud,scan32_ptcloud);
