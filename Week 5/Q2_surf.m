@@ -10,8 +10,11 @@ i2 = imread('roofs2.jpg');
 i1gs = rgb2gray(i1);
 i2gs = rgb2gray(i2);
 
+% gets corners
 points1 = detectSURFFeatures(i1gs);
 points2 = detectSURFFeatures(i2gs);
+
+% gets descriptor
 [features1, validPoints1] = extractFeatures(i1gs,points1);
 [features2, validPoints2] = extractFeatures(i2gs,points2);
 
