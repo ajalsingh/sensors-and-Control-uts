@@ -1,4 +1,7 @@
-%% Model and plot
+%% 1.1 Model and 1.2 plot
+clear;
+close all;
+clc;
 
 d1 = 0.1;
 d2 = 0.1;
@@ -48,26 +51,26 @@ xlabel('k')
 ylabel('Stock Units')
 
 
-%% Calculating eigen values of A to test for system stability
+%% 1.3 Calculating eigen values of A to test for system stability
 
 eig(A)
 
 
-%% Test for system controllability
+%% 1.4 Test for system controllability
 
 Co = [B A*B A^2*B];
 rank(Co)
 
-%% Create discrete time system model
+%% 1.5 Create discrete time system model
 
 sys = ss(A,B,C,0, 1, 'TimeUnit', 'months');
 
-% Check stability
-isstable(sys)
+%% 1.6 Check stability & controlability
+stable = isstable(sys)
 
 % Calculate control matrix
 CO = ctrb(A,B)
 
 % Test number of uncontrollable states
-unco = length(A) - rank(CO)
+uncontrollable_states = length(A) - rank(CO)
 

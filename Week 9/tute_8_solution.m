@@ -1,6 +1,8 @@
+%% Question 1 : Linearizing a nonlinear system
 clear
 clc
-
+close all;
+%% i 
 fprintf('Problem i');
 % u1 = 0, u2 = 1
 % x1(k+1) - x1(k) = 0 ==> x1(k)^3 - x1(k) = 0
@@ -19,7 +21,7 @@ end
 x1_
 x2_
 
-% Linearization
+% i - Linearization
 % A =   3x^2    0
 %       2       3
 
@@ -40,7 +42,7 @@ for i=1:length(x1_)
     disp(eigenV);
 end
 
-%%
+%% ii
 
 fprintf('Problem ii');
 % u1 = 3, u2 = 1
@@ -74,7 +76,7 @@ for i=1:length(x1_)
     end
 end
 
-%%
+%% iii
 
 fprintf('Problem iii')
 % u1 = 0 and u2 = 2

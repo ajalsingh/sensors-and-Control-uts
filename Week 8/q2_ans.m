@@ -1,4 +1,7 @@
-%% Define Model
+%% 2.1 Define Model
+clear;
+close all;
+clc;
 
 A = [1.5 1.75 1.3
     1 0 0;
