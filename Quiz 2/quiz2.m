@@ -1,4 +1,7 @@
 %% Q1 intrinsic param
+clear
+clc
+close all
 
 % given params
 principle_point = [682 498];
